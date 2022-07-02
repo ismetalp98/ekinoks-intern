@@ -6,22 +6,36 @@ export class KnexDB {
         console.log('knex db init');
     };
 
-    config: Knex.Config = {
-        client: 'pg',
-        connection: {
-            connectionString: config.DATABASE_URL,
-            ssl: {
-                rejectUnauthorized: false
+    config: Knex.Config = config.APP_MODE === 'dev' ?
+        {
+            client: 'pg',
+            connection: {
+                connectionString: config.DATABASE_URL
+            },
+            migrations: {
+                directory: __dirname + '/migrations',
+                tableName: 'knex_migrations',
+            },
+            seeds: {
+                directory: __dirname + '/seeds',
             }
-        },
-        migrations: {
-            directory: __dirname + '/migrations',
-            tableName: 'knex_migrations',
-        },
-        seeds: {
-            directory: __dirname + '/seeds',
-        },
-    };
+        }
+        : {
+            client: 'pg',
+            connection: {
+                connectionString: config.DATABASE_URL,
+                ssl: {
+                    rejectUnauthorized: false
+                }
+            },
+            migrations: {
+                directory: __dirname + '/migrations',
+                tableName: 'knex_migrations',
+            },
+            seeds: {
+                directory: __dirname + '/seeds',
+            },
+        };
 
     db = knex(this.config);
 
@@ -34,7 +48,7 @@ export class KnexDB {
                 resolve(true);
             } catch (error) {
                 const rollback = JSON.stringify(this.db.migrate.rollback());
-                // console.log('Migration error' + error);
+                console.log('Migration error' + error);
                 // console.log('Migration error' + rollback);
                 reject(false);
             }

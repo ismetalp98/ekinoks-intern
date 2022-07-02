@@ -2,6 +2,7 @@ require('dotenv').config();
 
 class Config {
     APP_SECRET = process.env.APP_SECRET || '238745623hsdf';
+    APP_MODE = process.env.APP_MODE || 'dev';
     APP_PORT = process.env.PORT || 8000;
     PG_USER_NAME = process.env.PG_USER_NAME || 'postgres';
     PG_USER_PSS = process.env.PG_USER_PSS || 'alp123';
