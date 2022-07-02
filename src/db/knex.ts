@@ -8,7 +8,10 @@ export class KnexDB {
 
     config: Knex.Config = {
         client: 'pg',
-        connection: config.DATABASE_URL,
+        connection: {
+            connectionString: config.DATABASE_URL,
+            ssl: true,
+        },
         migrations: {
             directory: __dirname + '/migrations',
             tableName: 'knex_migrations',
