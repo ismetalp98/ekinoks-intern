@@ -23,6 +23,7 @@ export class KnexDB {
     init() {
         return new Promise((resolve, reject) => {
             try {
+                console.log(config.DATABASE_URL);
                 const result = JSON.stringify(this.db.migrate.latest());
                 console.log('Migration completed' + result);
                 // this.db.seed.run();
