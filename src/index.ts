@@ -36,6 +36,9 @@ export class App {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
 
+        this.app.get('/', (req, res) => {
+            res.send('Hello World');
+        });
         this.app.use('/login', AuthRouter);
         this.app.use('/vendor', VendorRouter);
         this.app.use('/customer', CustomerRouter);
