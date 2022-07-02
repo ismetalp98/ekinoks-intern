@@ -10,7 +10,9 @@ export class KnexDB {
         client: 'pg',
         connection: {
             connectionString: config.DATABASE_URL,
-            ssl: true,
+            ssl: {
+                rejectUnauthorized: false
+            }
         },
         migrations: {
             directory: __dirname + '/migrations',
