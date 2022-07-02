@@ -8,13 +8,7 @@ export class KnexDB {
 
     config: Knex.Config = {
         client: 'pg',
-        connection: {
-            host: config.PG_HOST,
-            port: config.PG_DB_PORT,
-            user: config.PG_USER_NAME,
-            password: config.PG_USER_PSS,
-            database: config.PG_DB_NAME
-        },
+        connection: config.DATABASE_URL,
         migrations: {
             directory: __dirname + '/migrations',
             tableName: 'knex_migrations',

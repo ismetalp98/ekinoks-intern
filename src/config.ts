@@ -8,7 +8,7 @@ class Config {
     PG_DB_NAME = process.env.PG_DB_NAME;
     PG_DB_PORT = parseInt(process.env.PG_DB_PORT as string, 10) || 5432;
     PG_HOST = process.env.PG_HOST;
-    public PG_DB_URL = `postgres://${this.PG_USER_NAME}:${this.PG_USER_PSS}@localhost:${this.PG_DB_PORT}/${this.PG_DB_NAME}`;
+    DATABASE_URL = process.env.DATABASE_URL || `postgres://${this.PG_USER_NAME}:${this.PG_USER_PSS}@localhost:${this.PG_DB_PORT}/${this.PG_DB_NAME}`;
 };
 
 const config = new Config();
