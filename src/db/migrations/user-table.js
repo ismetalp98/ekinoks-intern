@@ -10,20 +10,20 @@ exports.up = function (knex) {
             table.string('password').notNullable();
             table.integer('pin_code');
             table.string('role').notNullable();
-        }
-            .createTable('food', function (table) {
-                table.increments('id');
-                table.string('name').notNullable();
-                table.string('details').notNullable();
-                table.integer('price').notNullable();
-                table.integer('vendor_id').notNullable();
-                table.primary(['id', 'vendor_id']);
-                table.foreign('vendor_id').references('user.id');
-            })
-        );
+        })
+        .createTable('food', function (table) {
+            table.increments('id');
+            table.string('name').notNullable();
+            table.string('details').notNullable();
+            table.integer('price').notNullable();
+            table.integer('vendor_id').notNullable();
+            table.primary(['id', 'vendor_id']);
+            table.foreign('vendor_id').references('user.id');
+        });
 };
 
 exports.down = function (knex) {
-    return knex.schema.dropTable('food')
+    return knex.schema
+        .dropTable('food')
         .dropTable('user');
 };
