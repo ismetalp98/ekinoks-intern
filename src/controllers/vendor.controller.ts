@@ -75,10 +75,10 @@ export class VendorController {
     };
 
     routes() {
-        this.router.post('/', this.createVendorController);
-        this.router.get('/', paginationHandler, this.getVendorsController);
-        this.router.get('/:id', this.getVendorsByIdController);
-        this.router.delete('/:id', this.deleteVendorController);
+        this.router.post('/', authendicateUser, checkPermission([UserTypes.ADMIN]), this.createVendorController);
+        this.router.get('/', authendicateUser, checkPermission([UserTypes.ADMIN]), paginationHandler, this.getVendorsController);
+        this.router.get('/:id', authendicateUser, checkPermission([UserTypes.ADMIN]), this.getVendorsByIdController);
+        this.router.delete('/:id', authendicateUser, checkPermission([UserTypes.ADMIN]), this.deleteVendorController);
     };
 };
 
