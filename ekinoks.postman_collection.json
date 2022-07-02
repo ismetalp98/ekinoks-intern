@@ -1,0 +1,1420 @@
+{
+	"info": {
+		"_postman_id": "bb7bd0c9-81e3-4b64-af52-38b0e86797f1",
+		"name": "ekinoks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21384626"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"item": [
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"ismet alp eren\",\n    \"email\": \"ismetalp@gmail.com\",\n    \"phone\": \"05252234567\",\n    \"address\": \"yenisehir mh.\",\n    \"password\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/customer",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"customer"
+							]
+						},
+						"description": "This endpoint is for creating new customer with given body format.\n\n**Permissions**\n\nThis endpoint requires no permission."
+					},
+					"response": [
+						{
+							"name": "createCustomer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ismet alp eren\",\n    \"email\": \"ismetalp@gmail.com\",\n    \"phone\": \"05252234567\",\n    \"address\": \"yenisehir mh.\",\n    \"password\": \"test123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basePath}}/customer",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-zgI2ahMtvCXNUFHsuBteHY4rNUs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 11:50:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Customer created succesfuly\",\n    \"status\": 201,\n    \"data\": {\n        \"id\": 15\n    }\n}"
+						},
+						{
+							"name": "createCustomer -> error allready exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"ismet alp eren\",\n    \"email\": \"ismetalp@gmail.com\",\n    \"phone\": \"05252234567\",\n    \"address\": \"yenisehir mh.\",\n    \"password\": \"test123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basePath}}/customer",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-mYTeJW9qSjOX01XpxfsMqzM+om4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 13:10:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Customer with this email is allready exists!\",\n    \"status\": 409\n}"
+						}
+					]
+				},
+				{
+					"name": "createVendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Labada Gurme\",\n    \"owner_name\": \"Fatih Canan\",\n    \"email\": \"labada@gmail.com\",\n    \"phone\": \"05352231234\",\n    \"address\": \"Adliye Mh.\",\n    \"pin_code\": 1234,\n    \"password\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/vendor",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"vendor"
+							]
+						},
+						"description": "This endpoint is for creating new vendor with given body format.\n\n**Permissions**\n\nOnly admins have permission to send request to this endpoint."
+					},
+					"response": [
+						{
+							"name": "createVendor",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Labada Gurme\",\n    \"owner_name\": \"Fatih Canan\",\n    \"email\": \"labada@gmail.com\",\n    \"phone\": \"05352231234\",\n    \"address\": \"Adliye Mh.\",\n    \"pin_code\": 1234,\n    \"password\": \"test123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basePath}}/vendor",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-xVPNOklZSw4jXjUFrSVEZg7/j4s\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 11:49:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vendor created succesfuly\",\n    \"status\": 201,\n    \"data\": {\n        \"id\": 14\n    }\n}"
+						},
+						{
+							"name": "createVendor -> not auth",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Labada Gurme\",\n    \"owner_name\": \"Fatih Canan\",\n    \"email\": \"labada@gmail.com\",\n    \"phone\": \"05352231234\",\n    \"address\": \"Adliye Mh.\",\n    \"pin_code\": 1234,\n    \"password\": \"test123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basePath}}/vendor",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-t8eENpfWX8UWhGImueTU17GzmI4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 13:11:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User not authorised\"\n}"
+						},
+						{
+							"name": "createVendor -> already exist error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Labada Gurme\",\n    \"owner_name\": \"Fatih Canan\",\n    \"email\": \"labada@gmail.com\",\n    \"phone\": \"05352231234\",\n    \"address\": \"Adliye Mh.\",\n    \"pin_code\": 1234,\n    \"password\": \"test123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basePath}}/vendor",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-t0OaxJe4MaZeHfj9jMvMkobZyBY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 13:12:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vendor with this email is allready exists!\",\n    \"status\": 409\n}"
+						},
+						{
+							"name": "createVendor -> invalid input",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Labada Gurme\",\n    \"owner_name\": \"Fatih Canan\",\n    \"email\": \"labadamail.com\",\n    \"phone\": \"05352231234\",\n    \"address\": \"Adliye Mh.\",\n    \"pin_code\": 1234,\n    \"password\": \"test123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{basePath}}/vendor",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-g2h+41AGhTmycwLYLbxnl4t9vl8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 13:28:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\\\"email\\\" must be a valid email\",\n    \"status\": 400\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "foodActions",
+			"item": [
+				{
+					"name": "addFood",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"pizza peperoni\",\n    \"price\": 80,\n    \"details\":\" sos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{basePath}}/food",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"food"
+							]
+						},
+						"description": "This endpoint is for adding new food with given body format to logged-in vendor.\n\n**Permissions**\n\nOnly vendors has permisson to send request to this endpoint."
+					},
+					"response": []
+				},
+				{
+					"name": "getFoods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/food",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"food"
+							]
+						},
+						"description": "This endpoint is for getting foods list of logged-in vendor.\n\n**Permissions**\n\nOnly vendors have permisson to send request to this endpoint."
+					},
+					"response": []
+				},
+				{
+					"name": "getFoodsByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/vendor/7/food",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"vendor",
+								"7",
+								"food"
+							]
+						},
+						"description": "This endpoint is for getting foods list of vendor with given id.\n\n**Permissions**\n\nOnly admins have permisson to send request to this endpoint."
+					},
+					"response": [
+						{
+							"name": "getFoodsByID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{basePath}}/vendor/7/food",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor",
+										"7",
+										"food"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "376"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"178-McVOJURNJK43IB98LYmV8AtcWOc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 13:20:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Food fetch succesfuly\",\n    \"status\": 200,\n    \"data\": {\n        \"totalCount\": 4,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"pizza eu\",\n                \"details\": \" sos\",\n                \"price\": 50,\n                \"vendor_id\": 7\n            },\n            {\n                \"id\": 2,\n                \"name\": \"pizza margarita\",\n                \"details\": \" sos\",\n                \"price\": 60,\n                \"vendor_id\": 7\n            },\n            {\n                \"id\": 3,\n                \"name\": \"pizza marinara\",\n                \"details\": \" sos\",\n                \"price\": 40,\n                \"vendor_id\": 7\n            },\n            {\n                \"id\": 4,\n                \"name\": \"pizza peperoni\",\n                \"details\": \" sos\",\n                \"price\": 80,\n                \"vendor_id\": 7\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "getFoodsByID -> empty result",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{basePath}}/vendor/6/food",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor",
+										"6",
+										"food"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-KTBbEJ2x3wbj7qwMDgA1j+FOqYs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 13:21:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Food fetch succesfuly\",\n    \"status\": 200,\n    \"data\": {\n        \"totalCount\": 0,\n        \"data\": []\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "getUsers",
+			"item": [
+				{
+					"name": "getVendors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/vendor?page=1&limit=2&order=owner_name",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"vendor"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "desc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "order",
+									"value": "owner_name"
+								},
+								{
+									"key": "name",
+									"value": "pid",
+									"disabled": true
+								},
+								{
+									"key": "owner_name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "pin_code",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "address",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "054",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "7",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This endpoint is for getting vendors list.\n\n**Permissions**\n\nOnly admins has permisson to send request to this endpoint."
+					},
+					"response": [
+						{
+							"name": "getVendors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{basePath}}/vendor",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "desc",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "owner_name",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "pid",
+											"disabled": true
+										},
+										{
+											"key": "owner_name",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "pin_code",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "address",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "054",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "7",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "886"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"376-x61rBLj8tNAtDopquNjBoqhF8tc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 11:48:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vendors fetch succesfuly\",\n    \"status\": 200,\n    \"data\": {\n        \"totalCount\": 5,\n        \"data\": [\n            {\n                \"id\": 6,\n                \"name\": \"kebap restaurant\",\n                \"owner_name\": \"alp\",\n                \"email\": \"test2@gmail.com\",\n                \"phone\": \"05252234567\",\n                \"address\": \"yenisehir mh.\",\n                \"pin_code\": 1234,\n                \"role\": \"vendor\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"pizza restaurant\",\n                \"owner_name\": \"ismet\",\n                \"email\": \"test1@gmail.com\",\n                \"phone\": \"05362234567\",\n                \"address\": \"servergazi mh.\",\n                \"pin_code\": 1234,\n                \"role\": \"vendor\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"pasta restaurant\",\n                \"owner_name\": \"eren\",\n                \"email\": \"test3@gmail.com\",\n                \"phone\": \"05452234567\",\n                \"address\": \"alsancak mh.\",\n                \"pin_code\": 1234,\n                \"role\": \"vendor\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"desert restaurant\",\n                \"owner_name\": \"lena\",\n                \"email\": \"test4@gmail.com\",\n                \"phone\": \"05452234533\",\n                \"address\": \"dörtyol mh.\",\n                \"pin_code\": 1234,\n                \"role\": \"vendor\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"pide restaurant\",\n                \"owner_name\": \"ezgi\",\n                \"email\": \"test5@gmail.com\",\n                \"phone\": \"05452231234\",\n                \"address\": \"çinar mh.\",\n                \"pin_code\": 1234,\n                \"role\": \"vendor\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "getVendors -> filtering",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{basePath}}/vendor?name=pid",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "desc",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "owner_name",
+											"disabled": true
+										},
+										{
+											"key": "name",
+											"value": "pid"
+										},
+										{
+											"key": "owner_name",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "pin_code",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "address",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "054",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "7",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "242"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f2-y8Pb2ikZh1vgFz+Ya+ECOAID2mw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 13:24:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vendors fetch succesfuly\",\n    \"status\": 200,\n    \"data\": {\n        \"totalCount\": 1,\n        \"data\": [\n            {\n                \"id\": 10,\n                \"name\": \"pide restaurant\",\n                \"owner_name\": \"ezgi\",\n                \"email\": \"test5@gmail.com\",\n                \"phone\": \"05452231234\",\n                \"address\": \"çinar mh.\",\n                \"pin_code\": 1234,\n                \"role\": \"vendor\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "getVendors -> pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{basePath}}/vendor?page=1&limit=2&order=owner_name",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor"
+									],
+									"query": [
+										{
+											"key": "sort",
+											"value": "desc",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "order",
+											"value": "owner_name"
+										},
+										{
+											"key": "name",
+											"value": "pid",
+											"disabled": true
+										},
+										{
+											"key": "owner_name",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "pin_code",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "address",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "phone",
+											"value": "054",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "7",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "404"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"194-aRXBek6/JKcCCX5r7hxq60WpOYs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 13:26:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vendors fetch succesfuly\",\n    \"status\": 200,\n    \"data\": {\n        \"totalCount\": 2,\n        \"data\": [\n            {\n                \"id\": 6,\n                \"name\": \"kebap restaurant\",\n                \"owner_name\": \"alp\",\n                \"email\": \"test2@gmail.com\",\n                \"phone\": \"05252234567\",\n                \"address\": \"yenisehir mh.\",\n                \"pin_code\": 1234,\n                \"role\": \"vendor\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"pasta restaurant\",\n                \"owner_name\": \"eren\",\n                \"email\": \"test3@gmail.com\",\n                \"phone\": \"05452234567\",\n                \"address\": \"alsancak mh.\",\n                \"pin_code\": 1234,\n                \"role\": \"vendor\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/customer",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"customer"
+							]
+						},
+						"description": "This endpoint is for getting customers list.\n\n**Permissions**\n\nOnly admins has permisson to send request to this endpoint."
+					},
+					"response": [
+						{
+							"name": "getCustomers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{basePath}}/customer",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"customer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "893"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37d-lnuWPNiwZgEDephEAaPf2WOKmBs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 11:48:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Customers fetch succesfuly\",\n    \"status\": 200,\n    \"data\": {\n        \"totalCount\": 7,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"ismet\",\n                \"email\": \"user1@gmail.com\",\n                \"phone\": \"05252234567\",\n                \"address\": \"yenisehir mh.\",\n                \"role\": \"customer\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"alp\",\n                \"email\": \"user2@gmail.com\",\n                \"phone\": \"05362234567\",\n                \"address\": \"servergazi mh.\",\n                \"role\": \"customer\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"eren\",\n                \"email\": \"user3@gmail.com\",\n                \"phone\": \"05452234567\",\n                \"address\": \"alsancak mh.\",\n                \"role\": \"customer\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"ezgi\",\n                \"email\": \"user4@gmail.com\",\n                \"phone\": \"05452234533\",\n                \"address\": \"dörtyol mh.\",\n                \"role\": \"customer\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"lena\",\n                \"email\": \"user5@gmail.com\",\n                \"phone\": \"05452231234\",\n                \"address\": \"çinar mh.\",\n                \"role\": \"customer\"\n            },\n            {\n                \"id\": 12,\n                \"name\": \"deneme\",\n                \"email\": \"user8@gmail.com\",\n                \"phone\": \"05252234567\",\n                \"address\": \"yenisehir mh.\",\n                \"role\": \"customer\"\n            },\n            {\n                \"id\": 13,\n                \"name\": \"deneme\",\n                \"email\": \"user9@gmail.com\",\n                \"phone\": \"05252234567\",\n                \"address\": \"yenisehir mh.\",\n                \"role\": \"customer\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "getVendorByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/vendor/6",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"vendor",
+								"6"
+							]
+						},
+						"description": "This endpoint is for getting vendor with given id.\n\n**Permissions**\n\nOnly admins has permisson to send request to this endpoint."
+					},
+					"response": [
+						{
+							"name": "getVendorByID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{basePath}}/vendor/6",
+									"host": [
+										"{{basePath}}"
+									],
+									"path": [
+										"vendor",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "218"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"da-LtiXkBPrTdPXs8aQ3b+tESLxN3U\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 11:49:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Vendors fetch succesfuly\",\n    \"status\": 200,\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"kebap restaurant\",\n        \"owner_name\": \"alp\",\n        \"email\": \"test2@gmail.com\",\n        \"phone\": \"05252234567\",\n        \"address\": \"yenisehir mh.\",\n        \"pin_code\": 1234,\n        \"role\": \"vendor\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "userLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user1@gmail.com\",\n    \"password\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"login"
+							]
+						},
+						"description": "This endpoint is to log-in into the system..\n\n**Permissions**\n\nRequires no permission."
+					},
+					"response": [
+						{
+							"name": "vendorLogin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test1@gmail.com\",\n    \"password\": \"test123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "308"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"134-HvZ8MmftLuzbZgEjW9JH304T7nY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 11:45:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"vendor logged in succesfuly\",\n    \"status\": 200,\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjo3LCJlbWFpbCI6InRlc3QxQGdtYWlsLmNvbSIsIm5hbWUiOiJwaXp6YSByZXN0YXVyYW50In0sInJvbGUiOiJ2ZW5kb3IiLCJpYXQiOjE2NTY1OTU5NTksImV4cCI6MTY2NDM3MTk1OX0.JZmN4MwF52quOAYzaRy5e55M3gzv15E3nmJMHHf0-U8\"\n}"
+						},
+						{
+							"name": "adminLogin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"124-1AX0VzKs/Jc4RrWWiK0hTEoCzY0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 11:47:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"admin logged in succesfuly\",\n    \"status\": 200,\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoxMSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJuYW1lIjoiYWRtaW4ifSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjU2NTk1OTc3LCJleHAiOjE2NjQzNzE5Nzd9.xFLoqeI1qH6325zwbyN9Q7A0oaqSROAZYjMbPuudDt8\"\n}"
+						},
+						{
+							"name": "customerLogin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"user1@gmail.com\",\n    \"password\": \"test123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12a-lrPs4RrSISRyXQ3wVRhOxBS2c6U\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 30 Jun 2022 11:47:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"customer logged in succesfuly\",\n    \"status\": 200,\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoxLCJlbWFpbCI6InVzZXIxQGdtYWlsLmNvbSIsIm5hbWUiOiJpc21ldCJ9LCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2NTY1OTU5OTEsImV4cCI6MTY2NDM3MTk5MX0.r8YvShTl-1GfOHJMkhxstrm6xTdPBqMsQfv4JtSD3GY\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "deleteActions",
+			"item": [
+				{
+					"name": "deleteVendor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{basePath}}/vendor/32",
+							"host": [
+								"{{basePath}}"
+							],
+							"path": [
+								"vendor",
+								"32"
+							]
+						},
+						"description": "This endpoint is for deleting the vendor with given id.\n\n**Permissions**\n\nOnly admins have permisson to send request to this endpoint."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
