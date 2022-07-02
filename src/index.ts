@@ -16,7 +16,7 @@ export class App {
     };
 
     init() {
-        // KnexDB.init();
+        KnexDB.init();
         this.listen();
         this.bind();
     };
