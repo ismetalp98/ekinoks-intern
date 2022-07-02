@@ -28,12 +28,12 @@ export class KnexDB {
     init() {
         return new Promise((resolve, reject) => {
             try {
-                // const result = JSON.stringify(this.db.migrate.latest());
+                const result = JSON.stringify(this.db.migrate.latest());
                 // console.log('Migration completed' + result);
                 // this.db.seed.run();
                 resolve(true);
             } catch (error) {
-                // const rollback = JSON.stringify(this.db.migrate.rollback());
+                const rollback = JSON.stringify(this.db.migrate.rollback());
                 // console.log('Migration error' + error);
                 // console.log('Migration error' + rollback);
                 reject(false);
